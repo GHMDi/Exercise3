@@ -6,6 +6,7 @@ public class Airplane {
     private int currentPassenger;
     private boolean isFlying;
     private int cruiseSpeed;
+    private String origin;
 
     public Airplane(String planeIdentification, boolean isFlying) {
         this.planeIdentification = planeIdentification;
@@ -92,5 +93,13 @@ public class Airplane {
 
     public void setCruiseSpeed(int cruiseSpeed) {
         this.cruiseSpeed = cruiseSpeed;
+    }
+
+    public String getOrigin() {
+        return origin;
+    }
+
+    public void setOrigin(String origin) {
+        this.origin = origin;
     }
 }
