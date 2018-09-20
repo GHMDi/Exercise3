@@ -8,8 +8,10 @@ public class Application {
         Airplane plane2 = new Airplane("DDD888",false);
 
         plane1.loadPlane(43,33);
+        plane1.landPlane();
         plane1.takeoffPlane();
-        plane2.loadPlane(23,49);
+        plane2.loadPlane(23,33);
+        plane2.takeoffPlane();
         plane1.landPlane();
         plane1.unloadPlane();
         plane2.takeoffPlane();

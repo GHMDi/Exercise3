@@ -9,7 +9,7 @@ public class Airplane {
 
     public Airplane(String planeIdentification, boolean isFlying) {
         this.planeIdentification = planeIdentification;
-        this.isFlying = isFlying;
+        this.setFlying(isFlying);
         //nieuwe constructor gemaakt die om planeIdentification vraagt en vraagt of vliegtuig vliegt
     }
 
@@ -21,18 +21,31 @@ public class Airplane {
             System.out.println("Airplane " + planeIdentification + " charges " + currentPassenger + " Passengers.");
         }
         else System.out.println("Airplane " + planeIdentification + " charges " + maxPassenger + " Passengers." +
-                notFittingPassengers + " did not fit.");
+                notFittingPassengers + " do not fit.");
     }
 
     public void takeoffPlane(){
-        setFlying(true);
-        System.out.println("Airplane "+ planeIdentification + " takes off.");
-    }
+        if (isFlying() == true) {
+            System.out.println("Airplane " + planeIdentification +
+                    " can not take off, because we are still flying.");
+        }
+        else if (isFlying() == false)
+                System.out.println("Plane " + planeIdentification + " rises.");
+            setFlying(true);
+        }
 
     public void landPlane(){
-        setFlying(false);
-        System.out.println("Plane "+ planeIdentification + " lands.");
-    }
+        if (isFlying() == false){
+            System.out.println("Airplane " + planeIdentification +
+                    " can not land, because we are still on the ground.");
+        }
+
+            else if (isFlying() == true)
+                // Always recall method is Flying () instead of variable, else it fails
+                System.out.println("Plane "+ planeIdentification + " lands.");
+                setFlying(false);
+
+        }
 
     public void unloadPlane(){
         int i = getCurrentPassenger();
