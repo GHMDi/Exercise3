@@ -9,13 +9,11 @@ public class Airport{
        String airplaneOnAirport = "";
         // Give airport name + assign String to airplane Array
 
-    public Airplane Airport() {
+    public Airport() {
             Airplane[] airplaneOnAirport = new Airplane[3];
             airplaneOnAirport[0] = new Airplane("ABC123", false);
             airplaneOnAirport[1] = new Airplane("DDD888", true);
             airplaneOnAirport[2] = new Airplane("ODL345", false);
-            Airplane.setOrigin("Eindhoven");
-            return airplaneOnAirport
             System.out.println(airplaneOnAirport);
     }
 

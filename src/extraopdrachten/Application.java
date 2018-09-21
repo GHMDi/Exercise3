@@ -6,6 +6,7 @@ public class Application {
 
         Airplane plane1 = new Airplane("ABC123",false);
         Airplane plane2 = new Airplane("DDD888",false);
+        Airport eindhoven = new Airport();
 
         plane1.loadPlane(43,33);
         plane1.landPlane();
