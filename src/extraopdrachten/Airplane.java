@@ -7,6 +7,7 @@ public class Airplane {
     private boolean isFlying;
     private int cruiseSpeed;
     private String origin;
+    private int notFittingPassengers;
 
     public Airplane(String planeIdentification, boolean isFlying) {
         this.planeIdentification = planeIdentification;
@@ -23,6 +24,7 @@ public class Airplane {
         }
         else System.out.println("Airplane " + planeIdentification + " charges " + maxPassenger + " Passengers." +
                 notFittingPassengers + " do not fit.");
+        this.notFittingPassengers = notFittingPassengers;
     }
 
     public void takeoffPlane(){
@@ -45,7 +47,6 @@ public class Airplane {
                 // Always recall method is Flying () instead of variable, else it fails
                 System.out.println("Plane "+ planeIdentification + " lands.");
                 setFlying(false);
-
         }
 
     public void unloadPlane(){
@@ -53,6 +54,7 @@ public class Airplane {
         System.out.println("Airplane "+ planeIdentification +" unloads " + i + " passengers.");
         setCurrentPassenger(currentPassenger - i);
     }
+//    Exercise 2.2
 
 
     public String getPlaneIdentification() {
@@ -101,5 +103,13 @@ public class Airplane {
 
     public void setOrigin(String origin) {
         this.origin = origin;
+    }
+
+    public int getNotFittingPassengers() {
+        return notFittingPassengers;
+    }
+
+    public void setNotFittingPassengers(int notFittingPassengers) {
+        this.notFittingPassengers = notFittingPassengers;
     }
 }
