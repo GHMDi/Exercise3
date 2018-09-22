@@ -6,6 +6,8 @@ public class Airport {
     // Give airport name + assign String to airplane Array
 
     public Airport(String name) {
+        this.name = name;
+        setName(name);
         airplaneFromAirport[0] = new PeoplePlane("ABC123", false,
                 "Eindhoven", "PeoplePlane", 30, 60);
         airplaneFromAirport[1] = new PeoplePlane("DDD888", true,
@@ -21,13 +23,13 @@ public class Airport {
     // Exercise 2.2 --> Available planes for loop die checkt of er nog plek is
 
     public void printPlanes() {
-        System.out.println("Passenger Airplanes");
+        System.out.println("Passagiersvliegtuigen");
         for (Airplane PeoplePlane : airplaneFromAirport) {
             if (PeoplePlane.getType() == "PeoplePlane")
                 System.out.println("Passagiersvliegtuig " + PeoplePlane.getPlaneIdentification());
-            else System.out.println();
+          else System.out.println();
         }
-        System.out.println("Cargo Airplanes");
+        System.out.println("Cargovliegtuigen");
         for (Airplane CargoPlane : airplaneFromAirport) {
             if (CargoPlane.getType() == "CargoPlane")
                 System.out.println("Cargovliegtuig " + CargoPlane.getPlaneIdentification());
