@@ -2,38 +2,16 @@ package extraopdrachten;
 
 public class Airplane {
     private String planeIdentification;
-    private int maxPassenger;
-    private int currentPassenger;
     private boolean isFlying;
     private int cruiseSpeed;
     private String origin;
-    private int notFittingPassengers;
-    private int availablePassengers;
+    // Wat zijn de general specs van een airplane. ID / flight Status/Speed/Origin
+    // General methodes Load & Unload
 
-
-    public Airplane(String planeIdentification, boolean isFlying,int currentPassenger,int maxPassenger) {
-        int availablePassengers = maxPassenger - currentPassenger;
-
+    public Airplane (String planeIdentification, boolean isFlying, String origin) {
         this.planeIdentification = planeIdentification;
-        this.setFlying(isFlying);
-        this.currentPassenger = currentPassenger;
-        this.maxPassenger = maxPassenger;
-        this.availablePassengers = availablePassengers;
-
-        //nieuwe constructor gemaakt die om planeIdentification vraagt en vraagt of vliegtuig vliegt
-        //current & max passengers
-    }
-
-    public void loadPlane(int passengersToLoad,int maxPassenger){
-        setCurrentPassenger(passengersToLoad);
-        setMaxPassenger(maxPassenger);
-        int notFittingPassengers = (currentPassenger - maxPassenger);
-        if (currentPassenger <= maxPassenger){
-            System.out.println("Airplane " + planeIdentification + " charges " + currentPassenger + " Passengers.");
-        }
-        else System.out.println("Airplane " + planeIdentification + " charges " + maxPassenger + " Passengers." +
-                notFittingPassengers + " do not fit.");
-        this.notFittingPassengers = notFittingPassengers;
+            this.isFlying = isFlying;
+            this.origin = origin;
     }
 
     public void takeoffPlane(){
@@ -58,13 +36,13 @@ public class Airplane {
         setFlying(false);
     }
 
-    public void unloadPlane(){
-        int i = getCurrentPassenger();
-        System.out.println("Airplane "+ planeIdentification +" unloads " + i + " passengers.");
-        setCurrentPassenger(currentPassenger - i);
-    }
-//    Exercise 2.2
+    public void loadPlane() {
 
+    }
+
+    public void unloadPlane() {
+
+    }
 
     public String getPlaneIdentification() {
         return planeIdentification;
@@ -72,22 +50,6 @@ public class Airplane {
 
     public void setPlaneIdentification(String planeIdentification) {
         this.planeIdentification = planeIdentification;
-    }
-
-    public int getMaxPassenger() {
-        return maxPassenger;
-    }
-
-    public void setMaxPassenger(int maxPassenger) {
-        this.maxPassenger = maxPassenger;
-    }
-
-    public int getCurrentPassenger() {
-        return currentPassenger;
-    }
-
-    public void setCurrentPassenger(int currentPassenger) {
-        this.currentPassenger = currentPassenger;
     }
 
     public boolean isFlying() {
@@ -112,21 +74,5 @@ public class Airplane {
 
     public void setOrigin(String origin) {
         this.origin = origin;
-    }
-
-    public int getNotFittingPassengers() {
-        return notFittingPassengers;
-    }
-
-    public void setNotFittingPassengers(int notFittingPassengers) {
-        this.notFittingPassengers = notFittingPassengers;
-    }
-
-    public int getAvailablePassengers() {
-        return availablePassengers;
-    }
-
-    public void setAvailablePassengers(int availablePassengers) {
-        this.availablePassengers = availablePassengers;
     }
 }

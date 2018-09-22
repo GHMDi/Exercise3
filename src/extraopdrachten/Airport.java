@@ -3,14 +3,20 @@ package extraopdrachten;
 public class Airport {
     private String name;
     private boolean available;
-    Airplane[] airplaneFromAirport = new Airplane[3];
+    Airplane[] airplaneFromAirport = new Airplane[5];
     // Give airport name + assign String to airplane Array
 
     public Airport(String name) {
-        airplaneFromAirport[0] = new Airplane("ABC123", false,0,30);
-        airplaneFromAirport[1] = new Airplane("DDD888", true,0,30);
-        airplaneFromAirport[2] = new Airplane("ODL345", true,0,30);
-        this.name = name;
+        airplaneFromAirport[0] = new PeoplePlane("ABC123", false,"Eindhoven",
+                30, 60);
+        airplaneFromAirport[1] = new PeoplePlane("DDD888", false,"Eindhoven",
+                30, 60);
+        airplaneFromAirport[2] = new PeoplePlane("ODL345", false,"Eindhoven",
+                30, 60);
+        airplaneFromAirport[3] = new CargoPlane("FF2134", false,"Eindhoven",
+                5);
+        airplaneFromAirport[4] = new CargoPlane("PLA166", false,"Eindhoven",
+                0);
     }
 
     // Exercise 2.2 --> Available planes for loop die checkt of er nog plek is
@@ -33,7 +39,7 @@ public class Airport {
                 System.out.println("Airplane " + airplane.getPlaneIdentification() + " " +
                         "requested. Is not flying, and has still room for " + airplane.getAvailablePassengers());
                 setAvailable(true);
-                airplane.loadPlane(63,30);}
+                airplane.loadPlane();}
             }
         }
 
