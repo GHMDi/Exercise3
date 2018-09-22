@@ -20,9 +20,11 @@ public class Application {
 //        plane2.landPlane();
 //        plane2.unloadPlane();
 
+        // Exercise 2.2
         Airport eindhoven = new Airport("Eindhoven");
-
-
+        System.out.println("Aircraft from airport " + eindhoven.getName());
+        eindhoven.printPlanes();
+        eindhoven.availablePlanes();
 
     }
 }

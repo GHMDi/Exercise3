@@ -8,11 +8,20 @@ public class Airplane {
     private int cruiseSpeed;
     private String origin;
     private int notFittingPassengers;
+    private int availablePassengers;
 
-    public Airplane(String planeIdentification, boolean isFlying) {
+
+    public Airplane(String planeIdentification, boolean isFlying,int currentPassenger,int maxPassenger) {
+        int availablePassengers = maxPassenger - currentPassenger;
+
         this.planeIdentification = planeIdentification;
         this.setFlying(isFlying);
+        this.currentPassenger = currentPassenger;
+        this.maxPassenger = maxPassenger;
+        this.availablePassengers = availablePassengers;
+
         //nieuwe constructor gemaakt die om planeIdentification vraagt en vraagt of vliegtuig vliegt
+        //current & max passengers
     }
 
     public void loadPlane(int passengersToLoad,int maxPassenger){
@@ -33,9 +42,9 @@ public class Airplane {
                     " can not take off, because we are still flying.");
         }
         else if (isFlying() == false)
-                System.out.println("Plane " + planeIdentification + " rises.");
-            setFlying(true);
-        }
+            System.out.println("Plane " + planeIdentification + " rises.");
+        setFlying(true);
+    }
 
     public void landPlane(){
         if (isFlying() == false){
@@ -43,11 +52,11 @@ public class Airplane {
                     " can not land, because we are still on the ground.");
         }
 
-            else if (isFlying() == true)
-                // Always recall method is Flying () instead of variable, else it fails
-                System.out.println("Plane "+ planeIdentification + " lands.");
-                setFlying(false);
-        }
+        else if (isFlying() == true)
+            // Always recall method is Flying () instead of variable, else it fails
+            System.out.println("Plane "+ planeIdentification + " lands.");
+        setFlying(false);
+    }
 
     public void unloadPlane(){
         int i = getCurrentPassenger();
@@ -111,5 +120,13 @@ public class Airplane {
 
     public void setNotFittingPassengers(int notFittingPassengers) {
         this.notFittingPassengers = notFittingPassengers;
+    }
+
+    public int getAvailablePassengers() {
+        return availablePassengers;
+    }
+
+    public void setAvailablePassengers(int availablePassengers) {
+        this.availablePassengers = availablePassengers;
     }
 }
