@@ -52,7 +52,7 @@ public class Airplane {
                     System.out.println("Passagiersvliegtuig " + planeIdentification + " laadt " + currentLoad
                             + " Passagiers.");
                 } else System.out.println("Passagiersvliegtuig " + getPlaneIdentification() + " laadt " + maxLoad
-                        + " Passagiers. " + notFittingLoads + " past niet.");
+                        + " Passagiers. " + notFittingLoads + " passagiers passen niet.");
                 break;
 //              System.out.println("switch 1 OK");
             case "CargoPlane":
@@ -60,7 +60,7 @@ public class Airplane {
                     System.out.println("Cargovliegtuig " + planeIdentification + " laadt " + currentLoad
                             + " ton Cargo.");
                 } else System.out.println("Airplane " + getPlaneIdentification() + " laadt " + maxLoad
-                        + " ton Cargo. " + notFittingLoads + " past niet.");
+                        + " ton Cargo. " + notFittingLoads + " ton past niet.");
                 break;
 //              System.out.println("switch 2 OK");
         }

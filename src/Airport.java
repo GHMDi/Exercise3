@@ -10,12 +10,12 @@ public class Airport {
         Airplane airplane = airplaneFromAirport[i];
         switch (airplane.getType()) {
             case "PeoplePlane":
-                return "Vliegtuig " + airplane.getPlaneIdentification() + " is een " + airplane.getType() +
-                        " afkomstig uit " + airplane.getOrigin() + ". " + airplane.getPlaneIdentification() +
+                return "Vliegtuig " + airplane.getPlaneIdentification() + " is een passagiersvliegtuig afkomstig uit "
+                        + airplane.getOrigin() + ". " + airplane.getPlaneIdentification() +
                         " heeft een maximale capaciteit van: " + airplane.getMaxLoad() + " passagiers.";
             case "CargoPlane":
-                return "Vliegtuig " + airplane.getPlaneIdentification() + "is een " + airplane.getType() +
-                        " afkomstig uit " + airplane.getOrigin() + ". " + airplane.getPlaneIdentification() +
+                return "Vliegtuig " + airplane.getPlaneIdentification() + " is een passagiersvliegtuig afkomstig uit "
+                        + airplane.getOrigin() + ". " + airplane.getPlaneIdentification() +
                         " heeft een maximale cargocapaciteit van: " + airplane.getMaxLoad() + " ton cargo.";
         }
         return null;
