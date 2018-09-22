@@ -1,9 +1,25 @@
 public class Airport {
     private String name;
     private boolean available;
+    int i;
 
     Airplane[] airplaneFromAirport = new Airplane[5];
     // Give airport name + assign String to airplane Array
+
+    public String toString() {
+        Airplane airplane = airplaneFromAirport[i];
+        switch (airplane.getType()) {
+            case "PeoplePlane":
+                return "Vliegtuig " + airplane.getPlaneIdentification() + " is een " + airplane.getType() +
+                        " afkomstig uit " + airplane.getOrigin() + ". " + airplane.getPlaneIdentification() +
+                        " heeft een maximale capaciteit van: " + airplane.getMaxLoad() + " passagiers.";
+            case "CargoPlane":
+                return "Vliegtuig " + airplane.getPlaneIdentification() + "is een " + airplane.getType() +
+                        " afkomstig uit " + airplane.getOrigin() + ". " + airplane.getPlaneIdentification() +
+                        " heeft een maximale cargocapaciteit van: " + airplane.getMaxLoad() + " ton cargo.";
+        }
+        return null;
+    }
 
     public Airport(String name) {
         this.name = name;
@@ -34,10 +50,10 @@ public class Airport {
             if (CargoPlane.getType() == "CargoPlane")
                 System.out.println("Cargovliegtuig " + CargoPlane.getPlaneIdentification());
         }
-    }
+}
 
 
-    public boolean availablePlanes() {
+    public void availablePlanes() {
         for (int i = 0; i < airplaneFromAirport.length; i++) {
             Airplane airplane = airplaneFromAirport[i];
             airplane.checkAvailable();
@@ -52,6 +68,7 @@ public class Airport {
                         setAvailable(true);
 //                            System.out.println("switch 1 OK");
                         airplane.loadPlane(63);
+                        System.out.println(toString());
                         break;
                     case "CargoPlane":
                         System.out.println("Cargovliegtuig " + airplane.getPlaneIdentification() + " " +
@@ -60,11 +77,11 @@ public class Airport {
                         setAvailable(true);
 //                            System.out.println("switch 2 OK");
                         airplane.loadPlane(20);
+                        System.out.println(toString());
                         break;
                 }
             }
         }
-        return true;
     }
 
     public String getName() {
